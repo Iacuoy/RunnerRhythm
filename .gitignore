@@ -1,0 +1,6 @@
+RunnerRhythmUnityProject/Library
+RunnerRhythmUnityProject/.idea
+RunnerRhythmUnityProject/obj
+RunnerRhythmUnityProject/Temp
+*.csproj
+*.sln
