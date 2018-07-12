@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b983436fb90464747ab62d19a9abb9c3, type: 3}
+  m_Name: BuildABConfig
+  m_EditorClassIdentifier: 
+  _debug: 1
+  _outputPath: ../../AssetBundles
+  _includeLocales: -1
+  _fullResPackage: 1
+  _allResLists:
+  - Description:
+      ResType: 1
+      IsFolderRes: 0
+      IsIndexed: 1
+      IsLocaleRes: 0
+      SearchFilter: 
+      RootPath: Assets/RawRes/Tables
+      CompressType: 1
+    InPackageGuidList: []
+    FoldoutInEditorUI: 1
+  - Description:
+      ResType: 10
+      IsFolderRes: 0
+      IsIndexed: 1
+      IsLocaleRes: 1
+      SearchFilter: t:prefab
+      RootPath: Assets/RawRes/Locale/{0}/UIPrefabs
+      CompressType: 1
+    InPackageGuidList: []
+    FoldoutInEditorUI: 1
+  - Description:
+      ResType: 4
+      IsFolderRes: 0
+      IsIndexed: 0
+      IsLocaleRes: 0
+      SearchFilter: t:font
+      RootPath: Assets/RawRes/Fonts
+      CompressType: 1
+    InPackageGuidList: []
+    FoldoutInEditorUI: 1
+  - Description:
+      ResType: 11
+      IsFolderRes: 1
+      IsIndexed: 0
+      IsLocaleRes: 0
+      SearchFilter: 
+      RootPath: Assets/RawRes/Sprites
+      CompressType: 1
+    InPackageGuidList: []
+    FoldoutInEditorUI: 1
+  _version: 0.0.1
+  SingleAdamResList:
+  - f314e8789a4f046a89292ec106f25aff
+  - 83d3c5529c9a845adaacebb3434badbc
+  - cc180403a2ea24b52940ccc6ae88a1a1
+  - 4a4aadc25862b4cffac3d014ab370371
+  - da55928d91d8b4cf3844ac50673b118b
+  FolderAdamResList: []
+  _excludeExtensions: 

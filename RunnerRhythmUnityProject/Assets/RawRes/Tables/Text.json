@@ -1,0 +1,173 @@
+[
+    {
+        "Id": "1",
+        "Name": "StudioName",
+        "CN": "猫天堂",
+        "HK": "貓天堂",
+        "TW": "貓天堂",
+        "JP": "猫天国",
+        "KR": "고양이천국",
+        "WW": "CatHeaven",
+        "US": "CatHeaven",
+        "GB": "CatHeaven",
+        "CA": "CatHeaven",
+        "FR": "Ciel de chat",
+        "DE": "Katzenhimmel",
+        "ES": "Gato cielo",
+        "PT": "Céu do gato",
+        "IT": "Cielo del gatto",
+        "RU": "Кошка рай"
+    },
+    {
+        "Id": "2",
+        "Name": "GameName",
+        "CN": "RunnerRhythm",
+        "HK": "RunnerRhythm",
+        "TW": "RunnerRhythm",
+        "JP": "RunnerRhythm",
+        "KR": "RunnerRhythm",
+        "WW": "RunnerRhythm",
+        "US": "RunnerRhythm",
+        "GB": "RunnerRhythm",
+        "CA": "RunnerRhythm",
+        "FR": "RunnerRhythm",
+        "DE": "RunnerRhythm",
+        "ES": "RunnerRhythm",
+        "PT": "RunnerRhythm",
+        "IT": "RunnerRhythm",
+        "RU": "RunnerRhythm"
+    },
+    {
+        "Id": "10",
+        "Name": "OK",
+        "CN": "确定",
+        "WW": "OK"
+    },
+    {
+        "Id": "11",
+        "Name": "Retry",
+        "CN": "重试",
+        "WW": "Retry"
+    },
+    {
+        "Id": "12",
+        "Name": "Cancel",
+        "CN": "取消",
+        "WW": "Cancel"
+    },
+    {
+        "Id": "13",
+        "Name": "GotoDownloadLink",
+        "CN": "前往下载",
+        "WW": "Go to download"
+    },
+    {
+        "Id": "14",
+        "Name": "SkipUpdate",
+        "CN": "下次再说",
+        "WW": "Skip"
+    },
+    {
+        "Id": "20",
+        "Name": "AppVersionExpired",
+        "CN": "当前游戏版本过低，请下载最新版本。",
+        "WW": "App version expired, please download the latest version."
+    },
+    {
+        "Id": "21",
+        "Name": "NewAppVersionReleased",
+        "CN": "有新的游戏版本发布，立刻更新吗？",
+        "WW": "A new version was released, do you wan't to update right now?"
+    },
+    {
+        "Id": "22",
+        "Name": "ResNeedsUpdate",
+        "CN": "是否更新资源，数量：{0}，大小：{1}？",
+        "WW": "Update the latest resources, Cnt: {0}, Size: {1}？"
+    },
+    {
+        "Id": "23",
+        "Name": "DownloadResError",
+        "CN": "下载必要的资源出错，请检查网络情况后重试",
+        "WW": "Error when download res, can't go on."
+    },
+    {
+        "Id": "24",
+        "Name": "SerializeResFailed",
+        "CN": "无法下载资源，请确保有足够的空间后重试",
+        "WW": "Can't download resources, make sure there is enough space."
+    },
+    {
+        "Id": "25",
+        "Name": "TryRecheckRes",
+        "CN": "需要下载 {0}文件，是否尝试重新连接服务器？",
+        "WW": "{0} re'sresources needs download, try to reconnect server?"
+    },
+    {
+        "Id": "26",
+        "Name": "ExitAppForResourcesImcomplete",
+        "CN": "无法下载必要的资源，退出游戏。",
+        "WW": "Can't download resources, exit game."
+    },
+    {
+        "Id": "1000",
+        "Name": "CheckingRes",
+        "CN": "正在检查资源...",
+        "HK": "正在檢查資源...",
+        "TW": "正在檢查資源...",
+        "JP": "リソースの確認をしています...",
+        "KR": "Checking resources...",
+        "WW": "Checking resources...",
+        "US": "Checking resources...",
+        "GB": "Checking resources...",
+        "CA": "Checking resources...",
+        "FR": "Checking resources...",
+        "DE": "Checking resources...",
+        "ES": "Checking resources...",
+        "PT": "Checking resources...",
+        "IT": "Checking resources...",
+        "RU": "Checking resources..."
+    },
+    {
+        "Id": "1001",
+        "Name": "DownloadingRes",
+        "CN": "正在下载资源...",
+        "HK": "正在檢查資源...",
+        "TW": "正在檢查資源...",
+        "JP": "リソースの確認をしています...",
+        "KR": "Checking resources...",
+        "WW": "Checking resources...",
+        "US": "Checking resources...",
+        "GB": "Checking resources...",
+        "CA": "Checking resources...",
+        "FR": "Checking resources...",
+        "DE": "Checking resources...",
+        "ES": "Checking resources...",
+        "PT": "Checking resources...",
+        "IT": "Checking resources...",
+        "RU": "Checking resources..."
+    },
+    {
+        "Id": "1002",
+        "Name": "DecompressingRes",
+        "CN": "正在解压资源...",
+        "HK": "正在檢查資源...",
+        "TW": "正在檢查資源...",
+        "JP": "リソースの確認をしています...",
+        "KR": "Checking resources...",
+        "WW": "Checking resources...",
+        "US": "Checking resources...",
+        "GB": "Checking resources...",
+        "CA": "Checking resources...",
+        "FR": "Checking resources...",
+        "DE": "Checking resources...",
+        "ES": "Checking resources...",
+        "PT": "Checking resources...",
+        "IT": "Checking resources...",
+        "RU": "Checking resources..."
+    },
+    {
+        "Id": "65535",
+        "Name": "Max"
+    }
+]

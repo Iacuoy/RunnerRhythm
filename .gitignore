@@ -4,3 +4,7 @@ RunnerRhythmUnityProject/obj
 RunnerRhythmUnityProject/Temp
 *.csproj
 *.sln
+Builds
+AssetBundles
+RunnerRhythmUnityProject/Assets/StreamingAssets
+StreamingAssets.meta

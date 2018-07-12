@@ -1,0 +1,8 @@
+[submodule "RunnerRhythmUnityProject/Assets/CHBase"]
+	path = RunnerRhythmUnityProject/Assets/CHBase
+	url = git@gitee.com:catheaven/chbase.git
+	branch = develop
+[submodule "GoogleSpreadSheetsTools"]
+	path = GoogleSpreadSheetsTools
+	url = git@gitee.com:catheaven/googlespreadsheetstools.git
+	branch = RRVer
