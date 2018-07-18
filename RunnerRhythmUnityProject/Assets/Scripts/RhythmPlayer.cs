@@ -9,13 +9,14 @@ namespace RR
 	public class RhythmPlayer
 	{
 		private const float C_DefaultFadeTime = 5f;
+		private const float C_MinRhythmTime = 5f;
+		private const float C_MinLoopTime = 10f;
+		private const float C_MaxLoopTime = 600f;
+		
 		public enum EPlayerState
 		{
 			Stop,
-			PlayRhythmFadeIn,
-			PlayRhythmNormal,
-			PlayRhythmFadeOut,
-			PlaySilence,
+			Play,
 			Pause,
 		}
 
@@ -25,28 +26,52 @@ namespace RR
 		private SoundEffectConfig _currentConfig;
 
 		/// <summary>
-		/// 不播放节奏的时间
+		/// 播放节奏的时间占总时间的比例
 		/// </summary>
-		[ShowInInspector] [MinValue(10)] [MaxValue(180)]
-		private float _silenceTime = 60f;
-
+		[ShowInInspector] [Range(0f, 1f)]
+		private float _rhythmTimePercentage = .2f;
 		/// <summary>
-		/// 播放节奏的时间
+		/// 一个循环的时间，单位s
 		/// </summary>
 		/// <returns></returns>
-		[ShowInInspector] [MinValue(5)] [MaxValue(60)]
-		private float _rhythmTime = 20f;
+		[ShowInInspector] [Range(5f, 300f)]
+		private float _loopLength = 30f;
+		
 		[ShowInInspector] [ReadOnly]
-		private float _timer;
+		private float _pos;
+
+		public float Pos
+		{
+			get { return _pos; }
+		}
 		
-		
+		public float RhythmTimePercentage
+		{
+			get { return _rhythmTimePercentage; }
+			set
+			{
+				if (value * _loopLength < C_MinRhythmTime) _rhythmTimePercentage = C_MinRhythmTime / _loopLength;
+				else _rhythmTimePercentage = value;
+			}
+		}
+		public float LoopLength
+		{
+			get { return _loopLength; }
+			set
+			{
+				if (value < C_MinLoopTime) _loopLength = C_MinLoopTime;
+				if (value > C_MaxLoopTime) _loopLength = C_MaxLoopTime;
+				else _loopLength = value;
+			}
+		}
+
 		public void Play ()
 		{
 			if (null == _currentConfig) return;
-			_state = EPlayerState.PlayRhythmFadeIn;
+			_state = EPlayerState.Play;
 			_currentConfig.AudioSourceA.volume = 0f;
 			_currentConfig.AudioSourceA.Play();
-			_timer = 0;
+			_pos = 0;
 		}
 
 		public void Pause ()
@@ -60,6 +85,7 @@ namespace RR
 			if (null == _currentConfig) return;
 			_state = EPlayerState.Stop;
 			_currentConfig.AudioSourceA.Stop();
+			_pos = 0f;
 		}
 
 		public void SetSoundEffectConfig (SoundEffectConfig config)
@@ -70,42 +96,28 @@ namespace RR
 		public void Update ()
 		{
 			if (EPlayerState.Stop == _state) return;
-			_timer += Time.deltaTime;
-			if (EPlayerState.PlayRhythmFadeIn == _state)
+			_pos += Time.deltaTime / _loopLength;
+			if (_pos >= 1f) _pos -= 1f;
+			if (EPlayerState.Play == _state)
 			{
-				var length = Mathf.Min(_rhythmTime * 0.25f, C_DefaultFadeTime);
-				_currentConfig.AudioSourceA.volume = _timer / length;
-				if (_timer > length)
+				var rhythmLength = _loopLength * _rhythmTimePercentage;
+				var fadeInEndPos = Mathf.Min(rhythmLength * 0.25f, C_DefaultFadeTime) / _loopLength;
+
+				if (_pos < fadeInEndPos)
 				{
-					_state = EPlayerState.PlayRhythmNormal;
+					_currentConfig.AudioSourceA.volume = _pos / fadeInEndPos;
+				}
+				else if (_pos < _rhythmTimePercentage - fadeInEndPos)
+				{
 					_currentConfig.AudioSourceA.volume = 1f;
 				}
-			}
-			else if (EPlayerState.PlayRhythmNormal == _state)
-			{
-				if (_timer > Mathf.Max(_rhythmTime * 0.75f, _rhythmTime - C_DefaultFadeTime))
+				else if (_pos < _rhythmTimePercentage)
 				{
-					_state = EPlayerState.PlayRhythmFadeOut;
+					_currentConfig.AudioSourceA.volume = (_rhythmTimePercentage - _pos) / fadeInEndPos;
 				}
-			}
-			else if (EPlayerState.PlayRhythmFadeOut == _state)
-			{
-				var a = _timer - Mathf.Max(_rhythmTime * 0.75f, _rhythmTime - C_DefaultFadeTime);
-				_currentConfig.AudioSourceA.volume =
-					1f - a / Mathf.Min(_rhythmTime * 0.25f, C_DefaultFadeTime);
-				if (_timer >= _rhythmTime)
+				else
 				{
-					_state = EPlayerState.PlaySilence;
 					_currentConfig.AudioSourceA.volume = 0f;
-					_timer = 0;
-				}
-			}
-			else if (EPlayerState.PlaySilence == _state)
-			{
-				if (_timer >= _silenceTime)
-				{
-					_state = EPlayerState.PlayRhythmFadeIn;
-					_timer = 0;
 				}
 			}
 		}

@@ -56,7 +56,7 @@ MonoBehaviour:
       CompressType: 1
     InPackageGuidList: []
     FoldoutInEditorUI: 1
-  _version: 0.0.3
+  _version: 0.0.4
   SingleAdamResList:
   - f314e8789a4f046a89292ec106f25aff
   - 83d3c5529c9a845adaacebb3434badbc

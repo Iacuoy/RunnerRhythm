@@ -6,3 +6,6 @@
 	path = GoogleSpreadSheetsTools
 	url = git@gitee.com:catheaven/googlespreadsheetstools.git
 	branch = RRVer
+[submodule "RunnerRhythmUnityProject/Assets/unity-ui-extensions"]
+	path = RunnerRhythmUnityProject/Assets/unity-ui-extensions
+	url = https://bitbucket.org/UnityUIExtensions/unity-ui-extensions.git
